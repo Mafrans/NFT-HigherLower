@@ -6,6 +6,6 @@ export class App extends LitElement {
   static styles = css`h1 { color: blue }`;
 
   render() {
-    return html`<h1>Hello World</h1>`;
+    return html`<h1 const='text-red'>Hello World</h1>`;
   }
 }

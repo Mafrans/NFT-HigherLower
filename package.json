@@ -9,21 +9,18 @@
     "lint": "npx standard src/**/*.{ts,tsx} --fix && npx stylelint src/**/*.css --fix",
     "build": "node build.js",
     "build:watch": "nodemon --watch src --ext ts,tsx,html,css,js --exec \"npm run build\"",
-    "dev:tailwind": "npx tailwindcss -o ./dist/tailwind.css --watch",
+    "dev:tailwind": "postcss -r dist/out.js",
     "dev:serve": "live-server --wait=1000 --no-css-inject --mount=/:./dist --entry-file=./dist/index.html --watch=./dist"
   },
   "dependencies": {
     "@fontsource/inter": "^4.5.0",
     "classnames": "^2.3.1",
-    "lit": "^2.0.2",
-    "postcss": "^8.3.9",
-    "react-icons": "^4.2.0"
+    "lit": "^2.0.2"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.15.7",
+    "@stylelint/postcss-css-in-js": "^0.37.2",
     "@types/node": "^16.10.2",
-    "@types/react": "^17.0.25",
-    "@types/react-dom": "^17.0.9",
     "concurrently": "^6.2.2",
     "esbuild": "^0.13.3",
     "live-server": "^1.2.1",
@@ -31,7 +28,6 @@
     "standard": "^16.0.3",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",
-    "tailwindcss": "^2.2.16",
     "typescript": "^4.4.3"
   }
 }
